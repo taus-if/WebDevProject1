@@ -546,6 +546,7 @@ nav.main-menu ul li {
 nav.main-menu ul li a {
   color: #fff;
   font-weight: 700;
+  font-size: 1.3em;
   display: block;
   padding: 15px;
 }
@@ -852,7 +853,7 @@ a.mobile-show {
 .footer-area {
   background-color: #051922;
   color: #fff;
-  padding: 150px 0;
+  padding: 60px 0;
 }
 
 h2.widget-title {
@@ -1786,18 +1787,18 @@ span.comment-date {
   margin-bottom: 30px;
 }
 
-.comment-template form p input[type=text] {
+.comment-template div input[type=text] {
   border: 1px solid #ddd;
-  width: 49%;
+  width: 100%;
   padding: 15px;
   border-radius: 5px;
   font-size: 15px;
   color: #051922;
 }
 
-.comment-template form p input[type=email] {
+.comment-template div p input[type=email] {
   border: 1px solid #ddd;
-  width: 49%;
+  width: 80%;
   padding: 15px;
   border-radius: 5px;
   font-size: 15px;
@@ -1805,7 +1806,7 @@ span.comment-date {
   margin-left: 10px;
 }
 
-.comment-template form p textarea {
+.comment-template form div textarea {
   border: 1px solid #ddd;
   padding: 15px;
   font-size: 15px;
@@ -1814,6 +1815,25 @@ span.comment-date {
   height: 250px;
   resize: none;
   width: 100%;
+}
+
+.comment-template form button {
+  background-color: #F28123;
+  color: #051922;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: #F28123;
+  /* border: none !important; */
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 30px;
+}
+
+.comment-template form button:hover{
+  background-color: white;
+  border: #F28123;
+  color: #051922;
 }
 
 .sidebar-section {
@@ -2162,15 +2182,15 @@ a.video-play-btn {
 }
 
 .team-bg-1 {
-  background-image: url(../img/avaters/image.jfif);
+  background-image: url(../img/team/rifat1.jpg);
 }
 
 .team-bg-2 {
-  background-image: url(../img/avaters/image_2.jfif);
+  background-image: url(../img/team/saifur1.jpg);
 }
 
 .team-bg-3 {
-  background-image: url(../img/team/team-3.jpg);
+  background-image: url(../img/team/tausif1.jpg);
 }
 
 .team-bg-4 {
@@ -2248,21 +2268,32 @@ ul.social-link-team li a {
   font-size: 15px;
   line-height: 1.8;
 }
-
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email]
+.contact-form div div div input[type=text] {
   width: 49%;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
 }
 
-.contact-form form p textarea {
+.contact-form div div div textarea {
   border: 1px solid #ddd;
   padding: 15px;
   height: 200px;
   border-radius: 3px;
   width: 100%;
   resize: none;
+}
+
+.contact-form div div div button{
+  border-radius: 30px;
+  background-color: #F28123;
+  border: none !important;
+}
+
+.contact-form div div div button:hover{
+  background-color: #adadad;
+  color: #000;
 }
 
 .contact-form-wrap {

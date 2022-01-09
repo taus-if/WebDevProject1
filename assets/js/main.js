@@ -241,3 +241,25 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
     $(target).fadeIn(600);
     
   });
+
+//   function submitContact() {
+//     var name = document.getElementById("contact_id").value;
+//     var email = document.getElementById("review_email").value;
+//     var phone = document.getElementById("contact_phone").value;
+//     var subject = document.getElementById("contact_subject").value;
+//     var message = document.getElementById("contact_message").value;
+
+//     firebase.database().ref('contact/' + name).set({
+//         name:name,
+//         email:email,
+//         phone:phone,
+//         subject:subject,
+//         message:message
+//     }, function (error) {
+//         if (error) {
+
+//         } else {
+//             alert("Done");
+//         }
+//     })
+// }

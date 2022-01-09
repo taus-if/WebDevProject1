@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script src="./assets/js/firebase.js"></script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+	<meta name="description"
+		content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
 	<title>Contact</title>
@@ -32,16 +36,32 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
+<script>
+	const firebaseConfig = {
+    apiKey: "AIzaSyAjmx5XN6vcfRfucZk146Y8Zlrk2sJVoRA",
+    authDomain: "tasakunjor.firebaseapp.com",
+    databaseURL: "https://tasakunjor-default-rtdb.firebaseio.com",
+    projectId: "tasakunjor",
+    storageBucket: "tasakunjor.appspot.com",
+    messagingSenderId: "346819240874",
+    appId: "1:346819240874:web:995aefa64f58a7bb8381d3",
+    measurementId: "G-2PJWWLZ305"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -67,8 +87,10 @@
 								<li><a href="contact.html">Contact</a></li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="shopping-cart" href="cart.html"><i
+												class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i
+												class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -82,7 +104,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-	
+
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -102,7 +124,7 @@
 	</div>
 	<!-- end search area -->
 
-	
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -119,7 +141,7 @@
 	<!-- end breadcrumb section -->
 
 	<!-- contact form -->
-	<div class="contact-from-section mt-150 mb-150">
+	<div class="contact-form contact-from-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mb-5 mb-lg-0">
@@ -129,22 +151,63 @@
 							You can also let us know your requirements for custom made products here.
 						</p>
 					</div>
-				 	<div id="form_status"></div>
+					<input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
+					<input type="email" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+					<input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
+					<textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
+					<button type="submit" value="send" class="btn btn-primary" onclick="submitContact()">SEND MESSAGE</button>
+
+					<!-- <div class="col-lg-7 mb-4 mb-lg-0">
+						
+						  <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
+						  <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+						  <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
+						  <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
+						  <button type="submit" value="send" class="btn btn-primary" onclick="submitContact()">SEND MESSAGE</button>
+						 </form> 
+					  </div> -->
+					<!-- <div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+						<div type="POST" id="fruitkha-contact" onSubmit="">
 							<p>
-								<input type="text" placeholder="Name" name="name" id="name">
-								<input type="email" placeholder="Email" name="email" id="email">
+								<input id="contact_id" type="text" placeholder="Name" name="name" id="name">
+								<input id="contact_email" type="email" placeholder="Email" name="email" id="email">
 							</p>
 							<p>
-								<input type="tel" placeholder="Phone" name="phone" id="phone">
-								<input type="text" placeholder="Subject" name="subject" id="subject">
+								<input id="contact_phone" type="tel" placeholder="Phone" name="phone" id="phone">
+								<input id="contact_subject" type="text" placeholder="Subject" name="subject"
+									id="subject">
 							</p>
-							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
+							<p><textarea id="contact_message" name="message" id="message" cols="30" rows="10"
+									placeholder="Message"></textarea></p>
 							<input type="hidden" name="token" value="FsWga4&@f6aw" />
-							<p><input type="submit" value="Submit"></p>
-						</form>
-					</div>
+							 <script>
+								function show() {
+									var name = document.getElementById("contact_id").value;
+									var email = document.getElementById("review_email").value;
+									var phone = document.getElementById("contact_phone").value;
+									var subject = document.getElementById("contact_subject").value;
+									var message = document.getElementById("contact_message").value;
+
+									firebase.database().ref('contact/' + name).set({
+										name=name,
+										email=email,
+										phone=phone,
+										subject=subject,
+										message=message
+									}, function (error) {
+										if (error) {
+
+										} else {
+											alert("Done");
+										}
+									})
+								}
+							</script> -->
+							<!-- <p><input type="submit" value="Submit" onclick=""></p>
+							<button onclick="show()">submit</button>
+						</div>
+					</div> -->
 				</div>
 				<div class="col-lg-4">
 					<div class="contact-form-wrap">
@@ -181,7 +244,10 @@
 
 	<!-- google map section -->
 	<div class="embed-responsive embed-responsive-21by9">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26432.42324808999!2d-118.34398767954286!3d34.09378509738966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1576846473265!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26432.42324808999!2d-118.34398767954286!3d34.09378509738966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf07045279bf%3A0xf67a9a6797bdfae4!2sHollywood%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1576846473265!5m2!1sen!2sbd"
+			width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+			class="embed-responsive-item"></iframe>
 	</div>
 	<!-- end google map section -->
 
@@ -193,7 +259,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>We are Tasakunjor trying to provide you the most creative 
+						<p>We are Tasakunjor trying to provide you the most creative
 							and artistic product at a resonable price.</p>
 					</div>
 				</div>
@@ -233,16 +299,20 @@
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 text-center col-md-12">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2022 - <a href="https://www.facebook.com/Tausifulhaque36">Md Tausiful Haque</a>, All Rights
+						Reserved.</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.facebook.com/Tausifulhaque36" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/Tausifulhaque7" target="_blank"><i class="fab fa-twitter"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
@@ -253,7 +323,7 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -276,6 +346,7 @@
 	<script src="assets/js/form-validate.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
-	
+
 </body>
+
 </html>
