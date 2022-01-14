@@ -2285,13 +2285,13 @@ ul.social-link-team li a {
   resize: none;
 }
 
-.contact-form div div div button{
+.contact-form div div div button, .contact-form div div div button:visited{
   border-radius: 30px;
   background-color: #F28123;
   border: none !important;
 }
 
-.contact-form div div div button:hover{
+.contact-form div div div button:hover, .contact-form div div div button:active{
   background-color: #adadad;
   color: #000;
 }
