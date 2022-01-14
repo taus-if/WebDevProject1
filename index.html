@@ -33,6 +33,8 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<!-- animation -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -227,7 +229,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
+				<div class="col-lg-4 col-md-6 text-center" data-aos="flip-left">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="assets/img/product1/product1.jpg" alt=""></a>
@@ -237,7 +239,7 @@
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
+				<div class="col-lg-4 col-md-6 text-center" data-aos="flip-up">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="assets/img/product1/product2.jpg" alt=""></a>
@@ -247,7 +249,7 @@
 						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center" data-aos="flip-right">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="assets/img/product1/product3.jpg" alt=""></a>
@@ -537,6 +539,11 @@
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	<!-- animation js -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 
 </body>
 
